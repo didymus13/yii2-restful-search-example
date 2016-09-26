@@ -1,4 +1,6 @@
 <?php
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
 
 Yii::setAlias('@tests', dirname(__DIR__) . '/tests/codeception');
 

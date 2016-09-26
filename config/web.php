@@ -1,4 +1,6 @@
 <?php
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
 
 $params = require(__DIR__ . '/params.php');
 
@@ -10,6 +12,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '0esSpz9EVJhK7Q-bye5SN2-HBX--FNh8',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -38,14 +43,18 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => ['superhero', 'superteam']
+                ],
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
