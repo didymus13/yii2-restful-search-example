@@ -18,6 +18,13 @@ Thumbs.db
 # composer itself is not needed
 composer.phar
 
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+
 # Mac DS_Store Files
 .DS_Store
 
@@ -25,3 +32,5 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+
+PhpStorm-*
