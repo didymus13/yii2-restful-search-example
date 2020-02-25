@@ -23,7 +23,7 @@ class SuperheroSearch extends Superhero
            'query' => $query
         ]);
 
-        $this->load($params);
+        $this->load($params, '');
         if (!$this->validate()) {
             return $dataProvider; // If validation fails, just return the unfiltered list
         }
